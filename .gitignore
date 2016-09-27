@@ -11,3 +11,8 @@
 *Thumbs.db
 *.sass-cache*
 *~imageoptim*
+
+docker-compose.override.yml
+/logs/*
+
+!.gitkeep
