@@ -10,7 +10,7 @@ build: clean
 	$(DOCKER_COMPOSE) build
 
 start:
-	$(DOCKER_COMPOSE) up -d
+	$(DOCKER_COMPOSE) up --no-recreate -d
 
 stop:
 	$(DOCKER_COMPOSE) kill || true
