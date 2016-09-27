@@ -1,0 +1,20 @@
+version: '2'
+services:
+  app:
+    container_name: bollery_kitchen_app
+    build: docker/app
+    volumes:
+      - ".:/var/www/html"
+    ports:
+      - "80:80"
+
+  database:
+    container_name: bollery_kitchen_database
+    image: percona:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=ets_bollery
+      - MYSQL_PASSWORD=ets_bollery
+      - MYSQL_DATABASE=ets_bollery
+    ports:
+      - "3306"

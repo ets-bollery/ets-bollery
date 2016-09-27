@@ -1,0 +1,9 @@
+version: '2'
+services:
+  app:
+    ports:
+      - "80:80"
+  database:
+    volumes:
+      - "{YOUR_LOCAL_MYSQL_PATH}:/var/lib/mysql"
+
