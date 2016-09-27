@@ -1,5 +1,5 @@
 # Keep these files out of the repo
-/wp-content/themes/twenty*
+/wp-content/themes/*
 /wp-content/upgrade
 /wp-content/uploads
 /sitemap.*
@@ -16,3 +16,4 @@ docker-compose.override.yml
 /logs/*
 
 !.gitkeep
+!index.php
