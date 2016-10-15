@@ -20,6 +20,10 @@ clean: stop
 
 re: stop clean build start
 
+sync:
+	rsync -a --delete benoit:ets-bollery/wp-content/themes/ ./wp-content/themes
+	rsync -a --delete benoit:ets-bollery/wp-content/uploads/ ./wp-content/uploads
+
 rm: clean
 
 ps:

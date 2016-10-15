@@ -2,7 +2,9 @@
 FROM php:7.0-apache
 
 RUN apt-get update && apt-get install -y wget git zip unzip libgd-dev \
-    && docker-php-ext-install mysqli pdo_mysql gd opcache zip
+    && docker-php-ext-install mysqli pdo_mysql opcache zip \
+    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-install -j$(nproc) gd
 
 # Copy required configuration files
 COPY 000-default.conf /etc/apache2/sites-available
